@@ -14,11 +14,11 @@ wget https://dl.grafana.com/oss/release/grafana-8.5.2-1.x86_64.rpm
 
 ## Copiar para o servidor
 
-scp ~/Downloads/grafana-8.5.2-1.x86_64.rpm ec2-user@ec2-34-200-224-202.compute-1.amazonaws.com:~
+scp grafana-8.5.2-1.x86_64.rpm ec2-user@ec2-44-203-249-15.compute-1.amazonaws.com:~
 
 ## Acessar a instância
 
-ssh ec2-user@ec2-34-200-224-202.compute-1.amazonaws.com
+ssh ec2-user@ec2-44-203-249-15.compute-1.amazonaws.com
 
 
 Instalar dependencias:
@@ -34,6 +34,10 @@ $ sudo /bin/systemctl daemon-reload
 $ sudo /bin/systemctl enable grafana-server.service
 
 $ sudo /bin/systemctl start grafana-server.service
+
+----------------------------------------------------------
+
+sudo yum install fontconfig urw-fonts -y && rpm -i grafana-8.5.2-1.x86_64.rpm && /bin/systemctl daemon-reload && /bin/systemctl enable grafana-server.service && /bin/systemctl start grafana-server.service
 
 Acessar no browser: http://34.200.224.202:3000
 

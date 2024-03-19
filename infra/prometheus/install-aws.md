@@ -8,11 +8,11 @@ prometheus-2.50.1.linux-amd64.tar.gz
 
 ## copiar para a instância na AWS
 
-scp ~/Downloads/prometheus-2.50.1.linux-amd64.tar.gz ec2-user@ec2-34-200-224-202.compute-1.amazonaws.com:~
+scp ~/Downloads/prometheus-2.50.1.linux-amd64.tar.gz ec2-user@ec2-44-203-249-15.compute-1.amazonaws.com:~
 
 ## Acessar a instância e descompactar o arquivo
 
-ssh ec2-user@ec2-34-200-224-202.compute-1.amazonaws.com
+ssh ec2-user@ec2-44-203-249-15.compute-1.amazonaws.com
 
 ## Conferir cópia
 
@@ -32,7 +32,7 @@ tar -xzf prometheus-2.50.1.linux-amd64.tar.gz
 
 ## Acessar pasta
 
-cd prometheus-2.44.0.linux-amd64.tar.gz
+cd prometheus-2.50.1.linux-amd64.tar.gz
 
 ## Habilitar o prometheus
 
