@@ -1,9 +1,3 @@
-# Get my public ip
-data "http" "ip" {
-  # url = "https://ipv4.icanhazip.com" quebra de linha
-  url = "https://api4.ipify.org"
-}
-
 #Security Group Resource
 resource "aws_security_group" "security_group" {
   name        = "${var.prefix_name}-sg"
@@ -32,6 +26,30 @@ resource "aws_security_group" "security_group" {
     protocol    = "tcp"
     cidr_blocks = ["${data.http.ip.response_body}/32"]
   }
+
+  ingress {
+    description = "Node Exporter"
+    from_port   = 9100
+    to_port     = 9100
+    protocol    = "tcp"
+    cidr_blocks = ["${data.http.ip.response_body}/32"]
+  }
+
+  # ingress {
+  #   description = "Prometheus - IP da vm do grafana"
+  #   from_port   = 9090
+  #   to_port     = 9090
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["${data.grafana.ip.value}/32"]
+  # }
+
+  # ingress {
+  #   description = "Prometheus - IP da vm do grafana"
+  #   from_port   = 9100
+  #   to_port     = 9100
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["${data.grafana.ip.value}/32"]
+  # }
 
   ingress {
     description = "Grafana"
