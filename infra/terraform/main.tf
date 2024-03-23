@@ -11,9 +11,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "tfstate-058264412712"
-    key = "projetos/workon/terraform.tfstate"
-    region = "us-east-1"
+    bucket  = "tfstate-058264412712"
+    key     = "projetos/workon/terraform.tfstate"
+    region  = "us-east-1"
     profile = "terraform"
   }
 

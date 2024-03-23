@@ -22,13 +22,22 @@ variable "instance_type" {
   description = "Tipo da Instância"
 }
 
-variable "instance_tags" {
+variable "tags_prometheus" {
   type = map(string)
   default = {
-    Name    = "aws-instance-workon"
-    Project = "Aplicando Terraform"
+    Name    = "prometheus"
+    Project = "Prometheus-Grafana"
   }
-  description = "Tags da instância"
+  description = "Prometheus"
+}
+
+variable "tags_grafana" {
+  type = map(string)
+  default = {
+    Name    = "grafana"
+    Project = "Prometheus-Grafana"
+  }
+  description = "Grafana"
 }
 
 variable "number_instances" {
