@@ -4,6 +4,6 @@ data "http" "ip" {
   url = "https://api4.ipify.org"
 }
 
-data "grafana" "ip" {
-    value = aws_instance.grafana.*.public_ip
-}
+# data "grafana" "ip" {
+#     value = aws_instance.grafana.*.public_ip
+# }
